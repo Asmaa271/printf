@@ -1,21 +1,24 @@
 #ifndef MAIN
 #define MAIN
 
+#include <stdarg.h>
+#include <stddef.h>
+
 #define UNUSED(x) (void)(x)
 
 /**
- * struct specifiers - Specifiers structure
+ * struct specifiers_struct - Specifiers structure
  *
- * @specifier: Specifier
- * @specifier_handler: The function to handel specifier
+ * @spc: Specifier
+ * @spc_handler: The function to handel specifier
  */
-typedef struct specifiers
+typedef struct specifiers_struct
 {
-	char specifier;
+	char spc;
 
-	int (*specifier_handler)(va_list args);
+	int (*spc_handler)(va_list args);
 
-} specifiers;
+} spc_t;
 
 int _putchar(char c);
 
@@ -26,5 +29,7 @@ int handel_char(va_list args);
 int handel_percent(va_list args);
 
 int handel_string(va_list args);
+
+int (*get_specifier_handler(char spc))(va_list args);
 
 #endif

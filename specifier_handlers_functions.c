@@ -38,6 +38,11 @@ int handel_string(va_list args)
 	int i = 0;
 	char *s = va_arg(args, char *);
 
+	if (!s)
+	{
+		s = "(null)";
+	}
+
 	while (s[i] != '\0')
 	{
 		_putchar(s[i]);

@@ -1,4 +1,3 @@
-#include <stdarg.h>
 #include "main.h"
 
 /**
@@ -11,6 +10,7 @@
 int _printf(const char *format, ...)
 {
 	int i = 0, printed_chars = 0;
+	int (*fun)(va_list args);
 
 	va_list args;
 
@@ -22,14 +22,8 @@ int _printf(const char *format, ...)
 			{
 				i++;
 
-				if (format[i] == 'c')
-					printed_chars += handel_char(args);
-
-				if (format[i] == 's')
-					printed_chars += handel_string(args);
-
-				if (format[i] == '%')
-					printed_chars += handel_percent(args);
+				fun = get_specifier_handler(format[i]);
+				printed_chars += fun(args);
 
 			} else
 			{
