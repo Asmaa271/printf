@@ -23,13 +23,18 @@ int _printf(const char *format, ...)
 	{
 		if (format[i] == '%')
 		{
-			i++;
+			do {
+				i++;
 
-			if (format[i] == '\0')
-				return (-1);
+				if (format[i] == '\0')
+					return (-1);
 
-			fun = get_specifier_handler(format[i]);
-			printed_chars += fun(args);
+				fun = get_specifier_handler(format[i]);
+
+				if (fun)
+					printed_chars += fun(args);
+
+			} while (format[i] == ' ');
 
 		} else
 		{
