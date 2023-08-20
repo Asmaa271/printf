@@ -12,6 +12,8 @@ int (*get_specifier_handler(char spc))(va_list args)
 			{'c', handel_char},
 			{'s', handel_string},
 			{'%', handel_percent},
+			{'d', handel_d_i},
+			{'i', handel_d_i},
 			{'\0', NULL}
 	};
 	int i;

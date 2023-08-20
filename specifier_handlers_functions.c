@@ -51,3 +51,18 @@ int handel_string(va_list args)
 
 	return (i);
 }
+
+/**
+ * handel_d_i - Function that handel number.
+ * @args: Arguments
+ *
+ * Return: the number of characters handled
+ */
+int handel_d_i(va_list args)
+{
+	int number = va_arg(args, int);
+
+	handel_number(number);
+
+	return (number_len(number));
+}
