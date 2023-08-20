@@ -25,6 +25,9 @@ int _printf(const char *format, ...)
 		{
 			i++;
 
+			if (format[i] == '\0')
+				return (-1);
+
 			fun = get_specifier_handler(format[i]);
 			printed_chars += fun(args);
 
