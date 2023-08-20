@@ -31,5 +31,6 @@ int handel_percent(va_list args);
 int handel_string(va_list args);
 
 int (*get_specifier_handler(char spc))(va_list args);
-
+int len_number(int number);
+int handle_number(int number);
 #endif
