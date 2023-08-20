@@ -15,29 +15,28 @@ int _printf(const char *format, ...)
 	va_list args;
 
 	va_start(args, format);
-	if (format)
-	{
-		while (format[i] != '\0')
-		{
-			if (format[i] == '%')
-			{
-				i++;
 
-				fun = get_specifier_handler(format[i]);
-				printed_chars += fun(args);
-
-			} else
-			{
-				_putchar(format[i]);
-				printed_chars++;
-			}
-
-			i++;
-		}
-	} else
-	{
+	if (!format || !format[0])
 		return (-1);
+
+	while (format[i] != '\0')
+	{
+		if (format[i] == '%')
+		{
+			i++;
+
+			fun = get_specifier_handler(format[i]);
+			printed_chars += fun(args);
+
+		} else
+		{
+			_putchar(format[i]);
+			printed_chars++;
+		}
+
+		i++;
 	}
+
 
 	va_end(args);
 
