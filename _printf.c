@@ -23,28 +23,23 @@ int _printf(const char *format, ...)
 	{
 		if (format[i] == '%')
 		{
-			do {
-				i++;
+			i++;
 
-				if (format[i] == '\0')
-					return (-1);
+			if (format[i] == '\0')
+				return (-1);
 
-				fun = get_specifier_handler(format[i]);
-
-				if (fun)
-					printed_chars += fun(args);
-
-			} while (format[i] == ' ');
-
+			fun = get_specifier_handler(format[i]);
+			if (fun)
+				printed_chars += fun(args);
+			else
+				return (-1);
 		} else
 		{
 			_putchar(format[i]);
 			printed_chars++;
 		}
-
 		i++;
 	}
-
 
 	va_end(args);
 
