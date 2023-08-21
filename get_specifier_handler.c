@@ -9,11 +9,11 @@
 int (*get_specifier_handler(char spc))(va_list args)
 {
 	spc_t specifiers[] = {
-			{'c', handel_char},
-			{'s', handel_string},
-			{'%', handel_percent},
-			{'d', handel_d_i},
-			{'i', handel_d_i},
+			{'c', handle_char},
+			{'s', handle_string},
+			{'%', handle_percent},
+			{'d', handle_d_i},
+			{'i', handle_d_i},
 			{'\0', NULL}
 	};
 	int i;

@@ -1,18 +1,18 @@
 #include "main.h"
 
 /**
- * handel_number - Function that handel number.
+ * handle_number - Function that handel number.
  * @number: Number
  *
  * Return: VOID
  */
-void handel_number(int number)
+void handle_number(int number)
 {
 	if (number == -2147483648)
 	{
 		_putchar('-');
 		_putchar('2');
-		handel_number(147483648);
+		handle_number(147483648);
 		return;
 	} else if (number < 0)
 	{
@@ -21,8 +21,8 @@ void handel_number(int number)
 	}
 	if (number >= 10)
 	{
-		handel_number(number / 10);
-		handel_number(number % 10);
+		handle_number(number / 10);
+		handle_number(number % 10);
 	} else
 	{
 		_putchar(number + '0');

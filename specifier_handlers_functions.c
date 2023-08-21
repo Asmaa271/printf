@@ -2,24 +2,24 @@
 #include "main.h"
 
 /**
- * handel_char - Function that handel char specifier.
+ * handle_char - Function that handel char specifier.
  * @args: Arguments
  *
  * Return: the number of characters handled
  */
-int handel_char(va_list args)
+int handle_char(va_list args)
 {
 	_putchar(va_arg(args, int));
 	return (1);
 }
 
 /**
- * handel_percent - Function that handel percent.
+ * handle_percent - Function that handel percent.
  * @args: Arguments
  *
  * Return: the number of characters handled
  */
-int handel_percent(va_list args)
+int handle_percent(va_list args)
 {
 	UNUSED(args);
 
@@ -28,12 +28,12 @@ int handel_percent(va_list args)
 }
 
 /**
- * handel_string - Function that handel string specifier.
+ * handle_string - Function that handel string specifier.
  * @args: Arguments
  *
  * Return: the number of characters handled
  */
-int handel_string(va_list args)
+int handle_string(va_list args)
 {
 	int i = 0;
 	char *s = va_arg(args, char *);
@@ -53,27 +53,27 @@ int handel_string(va_list args)
 }
 
 /**
- * handel_d_i - Function that handel number.
+ * handle_d_i - Function that handel number.
  * @args: Arguments
  *
  * Return: the number of characters handled
  */
-int handel_d_i(va_list args)
+int handle_d_i(va_list args)
 {
 	int number = va_arg(args, int);
 
-	handel_number(number);
+	handle_number(number);
 
 	return (number_len(number));
 }
 
 /**
- * handel_unknown - Function that handel unknown specifier.
+ * handle_unknown - Function that handel unknown specifier.
  * @spc: specifier
  *
  * Return: the number of characters handled
  */
-int handel_unknown(char spc)
+int handle_unknown(char spc)
 {
 	if (spc == ' ')
 		return (-1);

@@ -24,19 +24,19 @@ int _putchar(char c);
 
 int _printf(const char *format, ...);
 
-int handel_char(va_list args);
+int handle_char(va_list args);
 
-int handel_percent(va_list args);
+int handle_percent(va_list args);
 
-int handel_string(va_list args);
+int handle_string(va_list args);
 
-int handel_d_i(va_list args);
+int handle_d_i(va_list args);
 
-void handel_number(int number);
+void handle_number(int number);
 
 int number_len(int number);
 
-int handel_unknown(char spc);
+int handle_unknown(char spc);
 
 int (*get_specifier_handler(char spc))(va_list args);
 
