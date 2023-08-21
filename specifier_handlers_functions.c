@@ -66,3 +66,20 @@ int handel_d_i(va_list args)
 
 	return (number_len(number));
 }
+
+/**
+ * handel_unknown - Function that handel unknown specifier.
+ * @spc: specifier
+ *
+ * Return: the number of characters handled
+ */
+int handel_unknown(char spc)
+{
+	if (spc == ' ')
+		return (-1);
+
+	_putchar('%');
+	_putchar(spc);
+
+	return (2);
+}

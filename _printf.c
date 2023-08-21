@@ -32,7 +32,7 @@ int _printf(const char *format, ...)
 			if (fun)
 				printed_chars += fun(args);
 			else
-				return (-1);
+				printed_chars += handel_unknown(format[i]);
 		} else
 		{
 			_putchar(format[i]);

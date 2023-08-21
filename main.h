@@ -36,6 +36,8 @@ void handel_number(int number);
 
 int number_len(int number);
 
+int handel_unknown(char spc);
+
 int (*get_specifier_handler(char spc))(va_list args);
 
 #endif
